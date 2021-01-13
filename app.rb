@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/reloader' if development?
 
 configure do
   enable :sessions
@@ -7,7 +8,7 @@ end
 
 helpers do
   def username
-    session[:identity] ? session[:identity] : 'Hello stranger'
+    session[:identity] ? session[:identity] : 'Sign in'
   end
 end
 
