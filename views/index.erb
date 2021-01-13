@@ -6,7 +6,7 @@
   <% @results.each do |post| %>
     <p> <%= post['content'] %> </p><br>
     <small class="text-muted"> Added at: <%= post['created_date'] %> </small><br>
-    <small><a href="/post/<%= post['id'] %>">Comments</a></small>
+    <small><a href="/details/<%= post['id'] %>">Comments</a></small>
     <hr>
   <% end %>
 </div>
