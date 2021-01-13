@@ -1,6 +1,12 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'sqlite3'
+
+def init_db
+  @db = SQLite3::Database.new 'my_blog.sqlite'
+  @db.results_as_hash = true
+end
 
 configure do
   enable :sessions
