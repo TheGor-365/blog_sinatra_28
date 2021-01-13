@@ -1,3 +1,10 @@
 <div class="container mt-5 mb-5">
   <h3>Latest posts</h3>
 </div>
+
+<div class="container">
+  <% @results.each do |post| %>
+    <p> <%= post['content'] %> </p><br>
+    <small class="text-muted"> Added at: <%= post['created_date'] %> </small><hr>
+  <% end %>
+</div>
