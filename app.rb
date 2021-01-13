@@ -8,6 +8,10 @@ def init_db
   @db.results_as_hash = true
 end
 
+before do
+  init_db
+end
+
 configure do
   enable :sessions
 end
