@@ -3,5 +3,15 @@
 
   <p> <%= @row['content'] %> </p><br>
   <small class="text-muted"> Added at: <%= @row['created_date'] %> </small>
-  
+</div>
+
+<h5>Comments</h5>
+
+<div class="container">
+  <form action="/details/<%= @row['id'] %>" method="post">
+    <div class="form-floating mb-3">
+      <textarea name="content" class="form-control" placeholder="Type comment here" style="height: 100px"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add comment</button>
+  </form>
 </div>
