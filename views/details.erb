@@ -1,11 +1,20 @@
-<div class="container mt-5 mb-5">
-  <h4>Post details</h4>
+<h4 class="mt-5">Post details</h4>
 
+<div class="container mt-5 mb-5 border">
   <p> <%= @row['content'] %> </p><br>
   <small class="text-muted"> Added at: <%= @row['created_date'] %> </small>
 </div>
 
-<h5>Comments</h5>
+<div class="mb-5">
+  <h5>Comments</h5>
+</div>
+
+<div class="container">
+  <% @comments.each do |comment| %>
+    <p> <%= comment['content'] %> </p>
+    <small class="text-muted">Added at: <%= @row['created_date'] %></small><hr>
+  <% end %>
+</div>
 
 <div class="container">
   <form action="/details/<%= @row['id'] %>" method="post">
